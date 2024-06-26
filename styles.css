@@ -45,6 +45,10 @@ section ul li {
     line-height: 2;
     margin-bottom: 10px
 }
+section li {
+    line-height: 2;
+    margin-bottom: 10px
+}
 h2 {
     color: #444;
 }
