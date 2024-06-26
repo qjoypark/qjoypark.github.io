@@ -43,24 +43,25 @@
             text-decoration: none;
         }
 
-        section {
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
-            margin: 20px;
-            border-bottom: 1px solid #ddd;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        section ul li {
-            line-height: 2;
-            margin-bottom: 10px;
+        article {
+            margin-bottom: 20px;
         }
 
-        section li {
-            line-height: 2;
-            margin-bottom: 10px;
-        }
-
-        h2 {
+        article h2 {
             color: #444;
+        }
+
+        article p {
+            margin-bottom: 10px;
         }
 
         footer {
@@ -92,11 +93,30 @@
             <li><a href="blog.html">Blog</a></li>
         </ul>
     </nav>
-    <section>
-        <h2>Welcome to My Blog</h2>
-        <p>Here you can find the latest updates, insights, and articles about microbial ecology and my research work.</p>
-        <!-- Blog posts can be added here -->
-    </section>
+    <div class="container">
+        <section>
+            <h2>Welcome to My Blog</h2>
+            <p>Here you can find the latest updates, insights, and articles about microbial ecology and my research work.</p>
+
+            <!-- Blog Post 1 -->
+            <article>
+                <h2>Understanding Cyanobacterial Diversity</h2>
+                <p><em>Published on June 10, 2024</em></p>
+                <p>Cyanobacteria are among the oldest organisms on Earth, and their diversity plays a crucial role in ecosystem functions. In this post, we explore the mechanisms behind cyanobacterial diversity and its impacts on the environment...</p>
+                <p><a href="/post_files/post1.html">Read more</a></p>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article>
+                <h2>The Role of Genomics in Environmental Microbiology</h2>
+                <p><em>Published on May 25, 2024</em></p>
+                <p>Genomics has revolutionized our understanding of microbial communities. In this article, we delve into how genomic tools are used to study environmental microbiology and uncover the hidden dynamics of microbial ecosystems...</p>
+                <p><a href="/post_files/post2.html">Read more</a></p>
+            </article>
+
+            <!-- Add more blog posts as needed -->
+        </section>
+    </div>
     <footer>
         <p>&copy; 2024 Da Huo. All rights reserved.</p>
     </footer>
