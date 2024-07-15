@@ -1,84 +1,166 @@
-body {
-    font-family: Source Sans Pro, sans-serif;
-    line-height: 1.6;
+/* 全局样式 */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.6;
     color: #333;
+    background-color: #f4f4f4;
 }
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* 头部样式 */
 header {
-    background: #333;
+    background: #2c3e50;
     color: #fff;
-    padding: 20px 0;
+    padding: 1rem 0;
     text-align: center;
 }
 
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+/* 导航栏样式 */
 nav {
-    background: #444;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    background: #34495e;
+    padding: 1rem 0;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin-left: 1rem;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
+nav ul li a:hover {
+    color: #3498db;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 主要内容样式 */
 section {
-    padding: 20px;
-    margin: 20px;
-    border-bottom: 1px solid #ddd;
-}
-
-section ul li {
-    line-height: 2;
-    margin-bottom: 10px;
-}
-
-section li {
-    line-height: 2;
-    margin-bottom: 10px;
+    background: #fff;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 h2 {
-    color: #444;
+    color: #2c3e50;
+    margin-bottom: 1rem;
 }
 
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-p {
-    font-size: 14px;
-}
-
+/* About Me 部分样式 */
 .about-container {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .profile-photo {
-    margin-right: 20px;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
+
+.profile-photo img {
+    border-radius: 50%;
+    max-width: 200px;
 }
 
 .education {
-    max-width: 600px;
+    flex: 1;
+    min-width: 300px;
+}
+
+/* 出版物样式 */
+#publications ul {
+    list-style-type: none;
+}
+
+#publications li {
+    margin-bottom: 1rem;
+}
+
+/* 链接样式 */
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* 页脚样式 */
+footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .profile-photo {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
 }

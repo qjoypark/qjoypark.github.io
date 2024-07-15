@@ -3,129 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Da Huo - Microbial Ecology Researcher</title>
     <link rel="stylesheet" href="CSS/styles.css">
-    <style>
-        .about-container {
-            display: flex;
-            align-items: flex-start;
-        }
-        .profile-photo {
-            margin-right: 20px;
-        }
-        .education {
-            max-width: 600px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Da Huo</h1>
-        <p>Microbial Ecology & Evolution Researcher</p>
+        <div class="container">
+            <h1>Da Huo</h1>
+            <p>Microbial Ecology & Evolution Researcher</p>
+        </div>
     </header>
     <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#project">Project</a></li>
-            <li><a href="#academic-identity">Academic Identity</a></li>
-            <li><a href="#academic-conference">Conference</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="blog.html">Blog</a></li>
-        </ul>
+        <div class="container">
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            <ul id="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#academic-identity">Academic Identity</a></li>
+                <li><a href="#academic-conference">Conference</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
     </nav>
-    <section id="home">
-        <h2>Welcome to My Personal Page</h2>
-        <p>This is the personal website of Da Huo, a researcher in microbial ecology, showcasing my research, teaching activities, and personal updates.</p>
-    </section>
-    <section id="about" class="about-container">
-        <div class="profile-photo">
-            <img src="12.jpg" alt="Da Huo" style="width:200px;">
-        </div>
-        <div class="education">
+    <div class="container">
+        <section id="home">
+            <h2>Welcome to My Personal Page</h2>
+            <p>This is the personal website of Da Huo, a researcher in microbial ecology, showcasing my research, teaching activities, and personal updates.</p>
+        </section>
+        <section id="about">
             <h2>About Me</h2>
-            <p>Detailed introduction including educational background, work experience, and research interests.</p>
-            <a href="CV(DaHUO).pdf">Download My CV</a>
-            <h3>Working Experience</h3>
+            <div class="about-container">
+                <div class="profile-photo">
+                    <img src="12.jpg" alt="Da Huo" style="width:200px;">
+                </div>
+                <div class="education">
+                    <p>Detailed introduction including educational background, work experience, and research interests.</p>
+                    <a href="CV(DaHUO).pdf">Download My CV</a>
+                    <h3>Working Experience</h3>
+                    <ul>
+                        <li><strong>Postdoctoral Special research assistant</strong>, University of Chinese Academy of sciences, 2021-2024</li>
+                    </ul>
+                    <h3>Educational Background</h3>
+                    <ul>
+                        <li><strong>Ph.D. in Hydrobiology</strong>, University of Chinese Academy of sciences, 2021</li>
+                        <li><strong>M.Sc. in Aquaculture</strong>, Tianjin Agriculture University, 2018</li>
+                        <li><strong>B.Sc. in Aquarium Science and Technology</strong>, Tianjin Agricultural University, 2015</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="research">
+            <h2>Research</h2>
+            <p>Huo's research centers on the formation of cyanobacterial diversity and the mechanisms by which it influences ecosystem function. By employing genomics, environmental microbiology, and bioinformatics, we investigate the environmental impacts of this diversity across various scales. Our findings are crucial for understanding the role of cyanobacteria in natural ecosystems. Additionally, our interests have expanded to include a wide range of ecologically significant microorganisms. Recently, we have initiated a genomics study specifically focused on filamentous cyanobacteria.</p>
+        </section>
+        <section id="publications">
+            <h2>Publications</h2>
             <ul>
-                <li><strong>Postdoctoral Special research assistant</strong>, University of Chinese Academy of sciences, 2021-2024</li>
+                <h3><i>Primary Contributing Author</i></h3>
+                <li>Sun, S., Qiao, Z., Sun, K., & Huo, D.* (2024) Assembly Process and Co-occurrence Network of Microbial Community in Response to Free Ammonia Gradient Distribution. <i>Microbiology Spectrum</i> (Accepted) - <a href="https://doi.org/10.1128/spectrum.01051-24">DOI Link</a></li>
+                <li>Guan, Y., Yu, G., Jia, N., Han, R., Huo, D.* (2024). Spectral Characteristics of Dissolved Organic Matter in Plateau Lakes: Identifying Eutrophication Indicators in Southwest China. <i>Ecological Informatics</i> 102703 - <a href="https://www.sciencedirect.com/science/article/pii/S1574954124002450">Link</a></li>
+                <li>Guan, Y., Han, R., Jia, N., Yu, G., & Huo, D.* (2024). Optical characteristics of dissolved organic matter in relation to phytoplankton in Lake Erhai, China. <i>Process Safety and Environmental Protection</i>, 186, 166-175. - <a href="https://www.sciencedirect.com/science/article/pii/S0957582024003604">Link</a></li>
+                <li>Huo, D., Gan, N., Geng, R., Cao, Q., Song, L., Yu, G., & Li, R. (2021). Cyanobacterial blooms in China: Diversity, distribution, and cyanotoxins. <i>Harmful Algae</i>, 109, 102106. (<b>ESI Top 1% Highly Cited Paper</b>) - <a href="http://www.sciencedirect.com/science/article/pii/S1568988321001360">Link</a></li>
+                <li>Huo, D., Li, H., Cai, F., Guo, X., Qiao, Z., Wang, W., ... & Li, R. (2021). Genome evolution of filamentous cyanobacterium Nostoc species: From facultative symbiosis to free living. <i>Microorganisms</i>, 9(10), 2015. - <a href="https://www.mdpi.com/2076-2607/9/10/2015">Link</a></li>
+                <li>Huo, D., Chen, Y., Zheng, T., Liu, X., Zhang, X., Yu, G., ... & Li, R. (2018). Characterization of Microcystis (Cyanobacteria) genotypes based on the internal transcribed spacer region of rRNA by next-generation sequencing. <i>Frontiers in Microbiology</i>, 9, 971. - <a href="https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2018.00971/full">Link</a></li>
+                <li>Huo, D., Chen, Y., Liu, P., Li, Y., Qiao, Z., & Li, R. (2018). Molecular detection of microbial communities associated with Microcystis vs Synechococcus dominated waters in Tianjin, China. <i>Journal of Oceanology and Limnology</i>, 36(4), 1145-1156.(<b>Cover article</b>) - <a href="https://link.springer.com/article/10.1007/s00343-018-7182-x">Link</a></li>
+                <h3><i>Chinese Publications</i></h3>
+                <li>张炜, 周欣雅, 马凯丽, 李华, 虞功亮, 敖鸿毅 & 霍达. (2022). 青海湖主湖区与湖水淹没区的细菌群落结构差异分析. 水生生物学报 (12), 1807-1815. - <a href="http://ssswxb.ihb.ac.cn/cn/article/pdf/preview/10.7541/2023.2022.0235.pdf">Link</a></li>
+                <li>霍达, 曹琪, 王素炎, 陈裴裴, 李一鸣 & 乔之怡. (2018). 海河天津段微囊藻及其毒素的空间分布及与水环境因子的关系. 中国环境科学 (10), 3897-3903. - <a href="http://www.zghjkx.com.cn/CN/article/downloadArticleFile.do?attachType=PDF&id=15951">Link</a></li>
+                <li>霍达,刘萍,李一鸣,刘利华,陆恒,郭丛笑... & 乔之怡. (2018). 独流减河口浮游生物群落结构与环境因子的相关性研究. 海洋环境科学 (03), 396-402. - <a href="http://hyhjkx.nmemc.org.cn/article/exportPdf?id=551">Link</a></li>
+                <h3><i>Participating Articles</i></h3>
+                <li>He, Z., Chen, Y., Huo, D., Gao, J., Xu, Y., Yang, R., ... & Yu, G. (2023). Combined methods elucidate the multi-organ toxicity of cylindrospermopsin (CYN) on Daphnia magna. <i>Environmental Pollution</i>, 324, 121250. - <a href="https://www.sciencedirect.com/science/article/abs/pii/S026974912300252X">Link</a></li>
+                <li>Guo, X., Li, H., Huo, D., Hu, C., Li, R., Zhang, S., & Song, L. (2023). Aridity modulates biogeographic distribution and community assembly of cyanobacterial morphotypes in drylands. <i>FEMS Microbiology Ecology</i>, 99(6), fiad053. - <a href="https://academic.oup.com/femsec/article/99/6/fiad053/7172856">Link</a></li>
+                <li>Qiu, P., Chen, Y., Li, C., Huo, D., Bi, Y., Wang, J., ... & Yu, G. (2021). Using molecular detection for the diversity and occurrence of cyanobacteria and 2-methylisoborneol-producing cyanobacteria in an eutrophicated reservoir in northern China. <i>Environmental Pollution</i>, 288, 117772. - <a href="https://www.sciencedirect.com/science/article/abs/pii/S0269749121013543">Link</a></li>
+                <li>Li, H., Chen, Y., Yu, G., Rossi, F., Huo, D., De Philippis, R., ... & Li, R. (2021). Multiple diversity facets of crucial microbial groups in biological soil crusts promote soil multifunctionality. <i>Global Ecology and Biogeography</i>, 30(6), 1204-1217. - <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/geb.13295">Link</a></li>
+                <li>Li, H., Huo, D., Wang, W., Chen, Y., Cheng, X., Yu, G., & Li, R. (2020). Multifunctionality of biocrusts is positively predicted by network topologies consistent with interspecies facilitation. <i>Molecular Ecology</i>, 29(8), 1560-1573. - <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/mec.15424">Link</a></li>
+                <li>Cai, F., Li, X., Yang, Y., Jia, N., Huo, D., & Li, R. (2019). Compactonostoc shennongjiaensis gen. & sp. nov.(Nostocales, Cyanobacteria) from a wet rocky wall in China. <i>Phycologia</i>, 58(2), 200-210. - <a href="https://www.tandfonline.com/doi/abs/10.1080/00318884.2018.1541270">Link</a></li>
+                <li>Wang, J., Bai, P., Li, Q., Lin, Y., Huo, D., Ke, F., ... & Zhao, J. (2019). Interaction between cyanophage MaMV-DC and eight Microcystis strains, revealed by genetic defense systems. <i>Harmful Algae</i>, 85, 101699. - <a href="https://www.sciencedirect.com/science/article/pii/S1568988319301726">Link</a></li>
             </ul>
-            <h3>Educational Background</h3>
+        </section>
+        <section id="project">
+            <h2>Project</h2>
             <ul>
-                <li><strong>Ph.D. in Hydrobiology</strong>, University of Chinese Academy of sciences, 2021</li>
-                <li><strong>M.Sc. in Aquaculture</strong>, Tianjin Agriculture University, 2018</li>
-                <li><strong>B.Sc. in Aquarium Science and Technology</strong>, Tianjin Agricultural University, 2015</li>
+                <li>A multi-level response strategy for the adaptation of Raphidiopsis raciborskii populations to low temperature environments. China postdoctoral science foundation. 2021-2023, 80,000 CNY, PI</li>
+                <li>Mechanisms and ecological effects of microbial-driven carbon and nitrogen cycling in lakes. NSFC, 900,000 CNY, Key Member</li>
+                <li>Algicidal efficiency of water quality regulators and its ecological risk assessment, Corporate commissioned projects. 900,000 CNY,PI</li>
+                <li>Diversity and feeding strategies of algal-feeding protists and their application to the control of harmful algal blooms, International Cooperation and Exchange of the National Natural Science Foundation of China. 1,500,000 CNY, Major Contributor</li>
+                <li>Multi-dimensional Monitoring and Emergency Removal Technologies for Cyanobacterial Bloom Hazards in Water Sources Research, Intergovernmental International Innovation Cooperation Projects under the State Key R&D Programme. 3,200,000 CNY, Key Member</li>
             </ul>
-        </div>
-    </section>
-    <section id="research">
-        <h2>Research</h2>
-        <p>Huo's research centers on the formation of cyanobacterial diversity and the mechanisms by which it influences ecosystem function. By employing genomics, environmental microbiology, and bioinformatics, we investigate the environmental impacts of this diversity across various scales. Our findings are crucial for understanding the role of cyanobacteria in natural ecosystems. Additionally, our interests have expanded to include a wide range of ecologically significant microorganisms. Recently, we have initiated a genomics study specifically focused on filamentous cyanobacteria.</p>
-    </section>
-    <section id="publications">
-        <h2>Publications</h2>
-        <ul>
-            <h3><i>Primary Contributing Author</i></h3>
-            <li>Sun, S., Qiao, Z., Sun, K., & Huo, D.* (2024) Assembly Process and Co-occurrence Network of Microbial Community in Response to Free Ammonia Gradient Distribution. <i>Microbiology Spectrum</i> (Accepted) - <a href="https://doi.org/10.1128/spectrum.01051-24">DOI Link</a></li>
-            <li>Guan, Y., Yu, G., Jia, N., Han, R., Huo, D.* (2024). Spectral Characteristics of Dissolved Organic Matter in Plateau Lakes: Identifying Eutrophication Indicators in Southwest China. <i>Ecological Informatics</i> 102703 - <a href="https://www.sciencedirect.com/science/article/pii/S1574954124002450">Link</a></li>
-            <li>Guan, Y., Han, R., Jia, N., Yu, G., & Huo, D.* (2024). Optical characteristics of dissolved organic matter in relation to phytoplankton in Lake Erhai, China. <i>Process Safety and Environmental Protection</i>, 186, 166-175. - <a href="https://www.sciencedirect.com/science/article/pii/S0957582024003604">Link</a></li>
-            <li>Huo, D., Gan, N., Geng, R., Cao, Q., Song, L., Yu, G., & Li, R. (2021). Cyanobacterial blooms in China: Diversity, distribution, and cyanotoxins. <i>Harmful Algae</i>, 109, 102106. (<b>ESI Top 1% Highly Cited Paper</b>) - <a href="http://www.sciencedirect.com/science/article/pii/S1568988321001360">Link</a></li>
-            <li>Huo, D., Li, H., Cai, F., Guo, X., Qiao, Z., Wang, W., ... & Li, R. (2021). Genome evolution of filamentous cyanobacterium Nostoc species: From facultative symbiosis to free living. <i>Microorganisms</i>, 9(10), 2015. - <a href="https://www.mdpi.com/2076-2607/9/10/2015">Link</a></li>
-            <li>Huo, D., Chen, Y., Zheng, T., Liu, X., Zhang, X., Yu, G., ... & Li, R. (2018). Characterization of Microcystis (Cyanobacteria) genotypes based on the internal transcribed spacer region of rRNA by next-generation sequencing. <i>Frontiers in Microbiology</i>, 9, 971. - <a href="https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2018.00971/full">Link</a></li>
-            <li>Huo, D., Chen, Y., Liu, P., Li, Y., Qiao, Z., & Li, R. (2018). Molecular detection of microbial communities associated with Microcystis vs Synechococcus dominated waters in Tianjin, China. <i>Journal of Oceanology and Limnology</i>, 36(4), 1145-1156.(<b>Cover article</b>) - <a href="https://link.springer.com/article/10.1007/s00343-018-7182-x">Link</a></li>
-            <h3><i>Chinese Publications</i></h3>
-            <li>张炜, 周欣雅, 马凯丽, 李华, 虞功亮, 敖鸿毅 & 霍达. (2022). 青海湖主湖区与湖水淹没区的细菌群落结构差异分析. 水生生物学报 (12), 1807-1815. - <a href="http://ssswxb.ihb.ac.cn/cn/article/pdf/preview/10.7541/2023.2022.0235.pdf">Link</a></li>
-            <li>霍达, 曹琪, 王素炎, 陈裴裴, 李一鸣 & 乔之怡. (2018). 海河天津段微囊藻及其毒素的空间分布及与水环境因子的关系. 中国环境科学 (10), 3897-3903. - <a href="http://www.zghjkx.com.cn/CN/article/downloadArticleFile.do?attachType=PDF&id=15951">Link</a></li>
-            <li>霍达,刘萍,李一鸣,刘利华,陆恒,郭丛笑... & 乔之怡. (2018). 独流减河口浮游生物群落结构与环境因子的相关性研究. 海洋环境科学 (03), 396-402. - <a href="http://hyhjkx.nmemc.org.cn/article/exportPdf?id=551">Link</a></li>
-            <h3><i>Participating Articles</i></h3>
-            <li>He, Z., Chen, Y., Huo, D., Gao, J., Xu, Y., Yang, R., ... & Yu, G. (2023). Combined methods elucidate the multi-organ toxicity of cylindrospermopsin (CYN) on Daphnia magna. <i>Environmental Pollution</i>, 324, 121250. - <a href="https://www.sciencedirect.com/science/article/abs/pii/S026974912300252X">Link</a></li>
-            <li>Guo, X., Li, H., Huo, D., Hu, C., Li, R., Zhang, S., & Song, L. (2023). Aridity modulates biogeographic distribution and community assembly of cyanobacterial morphotypes in drylands. <i>FEMS Microbiology Ecology</i>, 99(6), fiad053. - <a href="https://academic.oup.com/femsec/article/99/6/fiad053/7172856">Link</a></li>
-            <li>Qiu, P., Chen, Y., Li, C., Huo, D., Bi, Y., Wang, J., ... & Yu, G. (2021). Using molecular detection for the diversity and occurrence of cyanobacteria and 2-methylisoborneol-producing cyanobacteria in an eutrophicated reservoir in northern China. <i>Environmental Pollution</i>, 288, 117772. - <a href="https://www.sciencedirect.com/science/article/abs/pii/S0269749121013543">Link</a></li>
-            <li>Li, H., Chen, Y., Yu, G., Rossi, F., Huo, D., De Philippis, R., ... & Li, R. (2021). Multiple diversity facets of crucial microbial groups in biological soil crusts promote soil multifunctionality. <i>Global Ecology and Biogeography</i>, 30(6), 1204-1217. - <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/geb.13295">Link</a></li>
-            <li>Li, H., Huo, D., Wang, W., Chen, Y., Cheng, X., Yu, G., & Li, R. (2020). Multifunctionality of biocrusts is positively predicted by network topologies consistent with interspecies facilitation. <i>Molecular Ecology</i>, 29(8), 1560-1573. - <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/mec.15424">Link</a></li>
-            <li>Cai, F., Li, X., Yang, Y., Jia, N., Huo, D., & Li, R. (2019). Compactonostoc shennongjiaensis gen. & sp. nov.(Nostocales, Cyanobacteria) from a wet rocky wall in China. <i>Phycologia</i>, 58(2), 200-210. - <a href="https://www.tandfonline.com/doi/abs/10.1080/00318884.2018.1541270">Link</a></li>
-            <li>Wang, J., Bai, P., Li, Q., Lin, Y., Huo, D., Ke, F., ... & Zhao, J. (2019). Interaction between cyanophage MaMV-DC and eight Microcystis strains, revealed by genetic defense systems. <i>Harmful Algae</i>, 85, 101699. - <a href="https://www.sciencedirect.com/science/article/pii/S1568988319301726">Link</a></li>
-        </ul>
-    </section>
-    <section id="project">
-        <h2>Project</h2>
-        <ul>
-            <li>A multi-level response strategy for the adaptation of Raphidiopsis raciborskii populations to low temperature environments. China postdoctoral science foundation. 2021-2023, 80,000 CNY, PI</li>
-            <li>Mechanisms and ecological effects of microbial-driven carbon and nitrogen cycling in lakes. NSFC, 900,000 CNY, Key Member</li>
-            <li>Algicidal efficiency of water quality regulators and its ecological risk assessment, Corporate commissioned projects. 900,000 CNY,PI</li>
-            <li>Diversity and feeding strategies of algal-feeding protists and their application to the control of harmful algal blooms, International Cooperation and Exchange of the National Natural Science Foundation of China. 1,500,000 CNY, Major Contributor</li>
-            <li>Multi-dimensional Monitoring and Emergency Removal Technologies for Cyanobacterial Bloom Hazards in Water Sources Research, Intergovernmental International Innovation Cooperation Projects under the State Key R&D Programme. 3,200,000 CNY, Key Member</li>
-        </ul>
-    </section>
-    <section id="academic-identity">
-        <h2>Academic Identity</h2>
-        <ul>
-            <li>Review Editor & Guest Associated Editor for <i>Frontiers in Microbiology</i>.</li>
-            <li>Guest Associated Editor for <i>Microorganisms</i>.</li>
-            <li>Reviewer for <i>Global Change Biology, FEMS Microbiology Ecology, Aquatic Ecology, Harmful Algae, Ecological informatics</i>.</li>
-            <li>Member of International Society for Microbial Ecology (ISME).</li>
-            <li>Member of Society for Molecular Biology and Evolution (SMBE).</li>
-            <li>Member of The American Society for Microbiology (ASM).</li>
-        </ul>
-    </section>
-    <section id="academic-conference">
-        <h2>Conference Speaker</h2>
-        <ul>
-            <li>Invited Speaker. The 9th Asian Pacific Phycological Forum (APPF2024), Hokkaido, Japan.</li>
-            <li>Speaker at sub-venues. The 7th Asian Pacific Phycological Forum (APPF2014), Wuhan, China.</li>
-        </ul>
-    </section>
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: qjoypark@gmail.com</p>
-        <p>Office Address: Institute of Hydrobiology, Chinese Academy of Sciences</p>
-        <p>Phone: +8618600008204</p>
-        <p>Social Media: <a href="https://www.researchgate.net/profile/Da-Huo-11">ResearchGate</a>, <a href="your-linkedin-profile">LinkedIn</a>, <a href="https://x.com/ErebusHD">Twitter</a></p>
-    </section>
-    <footer>
-        <p>&copy; 2024 Da Huo. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+        </section>
+        <section id="academic-identity">
+            <h2>Academic Identity</h2>
+            <ul>
+                <li>Review Editor & Guest Associated Editor for <i>Frontiers in Microbiology</i>.</li>
+                <li>Guest Associated Editor for <i>Microorganisms</i>.</li>
+                <li>Reviewer for <i>Global Change Biology, FEMS Microbiology Ecology, Aquatic Ecology, Harmful Algae, Ecological informatics</i>.</li>
+                <li>Member of International Society for Microbial Ecology (ISME).</li>
+                <li>Member of Society for Molecular Biology and Evolution (SMBE).</li>
+                <li>Member of The American Society for Microbiology (ASM).</li>
+            </ul>
+        </section>
+        <section id="academic-conference">
+            <h2>Conference Speaker</h2>
+            <ul>
+                <li>Invited Speaker. The 9th Asian Pacific Phycological Forum (APPF2024), Hokkaido, Japan.</li>
+                <li>Speaker at sub-venues. The 7th Asian Pacific Phycological Forum (APPF2014), Wuhan, China.</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: qjoypark@gmail.com</p>
+            <p>Office Address: Institute of Hydrobiology, Chinese Academy of Sciences</p>
+            <p>Phone: +8618600008204</p>
+            <p>Social Media: <a href="https://www.researchgate.net/profile/Da-Huo-11">ResearchGate</a>, <a href="your-linkedin-profile">LinkedIn</a>, <a href="https://x.com/ErebusHD">Twitter</
