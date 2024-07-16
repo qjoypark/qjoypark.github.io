@@ -39,26 +39,30 @@ nav {
 
 nav .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
-nav ul {
+nav ul.menu {
     list-style: none;
     display: flex;
 }
 
-nav ul li {
-    margin-left: 1rem;
+nav ul.menu li {
+    margin-right: 1rem;
 }
 
-nav ul li a {
+nav ul.menu li:last-child {
+    margin-right: 0;
+}
+
+nav ul.menu li a {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+nav ul.menu li a:hover {
     color: #3498db;
 }
 
@@ -105,13 +109,37 @@ h2 {
     min-width: 300px;
 }
 
+/* 列表样式 */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ul ul {
+    list-style-type: circle;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
 /* 出版物样式 */
 #publications ul {
     list-style-type: none;
+    padding-left: 0;
 }
 
 #publications li {
     margin-bottom: 1rem;
+    position: relative;
+    padding-left: 15px;
+}
+
+#publications li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #3498db;
 }
 
 /* 链接样式 */
@@ -137,18 +165,28 @@ footer {
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-    nav ul {
+    nav .container {
+        justify-content: space-between;
+    }
+
+    nav ul.menu {
         display: none;
         flex-direction: column;
         width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #34495e;
+        padding: 1rem;
     }
 
-    nav ul.show {
+    nav ul.menu.show {
         display: flex;
     }
 
-    nav ul li {
+    nav ul.menu li {
         margin: 0.5rem 0;
+        margin-right: 0;
     }
 
     .menu-icon {
