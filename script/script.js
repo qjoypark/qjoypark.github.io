@@ -6,14 +6,15 @@ var publicationsGroups = [
         items: [
             {
                 year: "2025",
-                title: "Comparative genomic analysis reveals the adaptive traits of <i>Ralstonia</i> spp. in aquatic environments.",
-                citation: "<i>Frontiers in Microbiology</i>, 2025-07. <a href=\"https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2025.1625651/full\">Link</a>"
-            },
-            {
-                year: "2025",
                 title: "Temporal Dynamics and Adaptive Mechanisms of Microbial Communities: Divergent Responses and Network Interactions.",
                 citation: "<i>Microbial Ecology</i>, 2025-09. <a href=\"https://link.springer.com/article/10.1007/s00248-025-02596-z\">Link</a>"
             },
+            {
+                year: "2025",
+                title: "Comparative genomic analysis reveals the adaptive traits of <i>Ralstonia</i> spp. in aquatic environments.",
+                citation: "<i>Frontiers in Microbiology</i>, 2025-07. <a href=\"https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2025.1625651/full\">Link</a>"
+            },
+            
             {
                 year: "2024",
                 title: "Assembly Process and Co-occurrence Network of Microbial Community in Response to Free Ammonia Gradient Distribution.",
