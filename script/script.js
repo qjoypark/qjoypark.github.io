@@ -28,7 +28,7 @@ var publicationsGroups = [
             {
                 year: "2024",
                 title: "Optical characteristics of dissolved organic matter in relation to phytoplankton in Lake Erhai, China.",
-                citation: "<i>Process Safety and Environmental Protection</i>, 186, 166-175. <a href=\"https://www.sciencedirect.com/science/article/abs/pii/S0957582024003604\">Link</a>"
+                citation: "<i>Process Safety and Environmental Protection</i>, 186, 166-175. <a href=\"https://www.sciencedirect.com/science/article/pii/S0957582024002322\">Link</a>"
             },
             {
                 year: "2021",
@@ -123,7 +123,7 @@ var projectsData = [
     {
         title: "Cold Adaptation Strategies",
         description: "A multi-level response strategy for the adaptation of <i>Raphidiopsis raciborskii</i> to low temperature environments.",
-        meta: "China Postdoctoral Science Foundation · PI · 2021–2023 · 80,000 CNY"
+        meta: "China Postdoctoral Science Foundation · PI · 2021-2023 · 80,000 CNY"
     },
     {
         title: "Microbial Carbon &amp; Nitrogen Cycling",
@@ -144,6 +144,17 @@ var projectsData = [
         title: "Cyanobacterial Bloom Hazards",
         description: "Multi-dimensional monitoring and emergency removal technologies for cyanobacterial bloom hazards in water sources.",
         meta: "State Key R&amp;D Programme · Key Member · 3,200,000 CNY"
+    }
+];
+
+var studentsData = [
+    {
+        name: "Shengjie Sun",
+        photo: "students/shengjie-sun.jpg",
+        focus: "Freshwater microbial ecology · Ammonia gradient assembly · Co-occurrence networks",
+        summary: "M.Sc. candidate examining how cyanobacterial communities respond to eutrophication and hydrological stressors.",
+        currentRole: "Master's Student, College of Fisheries, Tianjin Agricultural University (2021-2024)",
+        page: "students/shengjie-sun.html"
     }
 ];
 
@@ -257,6 +268,26 @@ function renderConferences() {
     });
 }
 
+function renderStudents() {
+    var grid = document.getElementById("students-grid");
+    if (!grid) {
+        return;
+    }
+
+    grid.innerHTML = "";
+    studentsData.forEach(function(student) {
+        var card = document.createElement("article");
+        card.className = "student-card";
+        card.innerHTML = "<img src=\"" + student.photo + "\" alt=\"" + student.name + "\">" +
+            "<h3>" + student.name + "</h3>" +
+            "<p class=\"student-summary\">" + student.summary + "</p>" +
+            "<p class=\"student-role\"><strong>" + student.currentRole + "</strong></p>" +
+            "<p class=\"student-focus\">" + student.focus + "</p>" +
+            "<a href=\"" + student.page + "\">View profile</a>";
+        grid.appendChild(card);
+    });
+}
+
 // 关闭菜单当点击菜单项时并渲染数据
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll(".menu a").forEach(function(item) {
@@ -290,4 +321,5 @@ document.addEventListener("DOMContentLoaded", function() {
     renderProjects();
     renderAcademicIdentity();
     renderConferences();
+    renderStudents();
 });
