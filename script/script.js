@@ -163,6 +163,14 @@ var studentsData = [
         summary: "M.Sc. graduate specializing in hyperspectral monitoring and molecular assays for harmful algal blooms in northern China.",
         currentRole: "Recent Graduate, Tianjin Agricultural University (M.Sc. Aquaculture, 2019-2022)",
         page: "students/qi-cao.html"
+    },
+    {
+        name: "Tao Zheng",
+        photo: "students/Tao-Zheng.jpg",
+        focus: "Plankton ecology · Molecular taxonomy · Water-quality diagnostics",
+        summary: "M.Sc. aquaculture graduate with extensive field sampling experience and expertise in cyanobacterial genetic diversity and phytoplankton monitoring.",
+        currentRole: "Recent Graduate, Tianjin Agricultural University (M.Sc. Aquaculture, 2017-2020)",
+        page: "students/tao-zheng.html"
     }
 ];
 
