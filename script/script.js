@@ -155,6 +155,14 @@ var studentsData = [
         summary: "M.Sc. candidate examining how cyanobacterial communities respond to eutrophication and hydrological stressors.",
         currentRole: "Master's Student, College of Fisheries, Tianjin Agricultural University (2021-2024)",
         page: "students/shengjie-sun.html"
+    },
+    {
+        name: "Qi Cao",
+        photo: "students/Qi-Cao.jpg",
+        focus: "Aquatic remote sensing · Cyanobacterial toxins · Molecular diagnostics",
+        summary: "M.Sc. graduate specializing in hyperspectral monitoring and molecular assays for harmful algal blooms in northern China.",
+        currentRole: "Recent Graduate, Tianjin Agricultural University (M.Sc. Aquaculture, 2019-2022)",
+        page: "students/qi-cao.html"
     }
 ];
 
