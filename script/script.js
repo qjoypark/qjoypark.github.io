@@ -20,6 +20,16 @@ var publicationsGroups = [
                 citation: "<i>Microbiology Spectrum</i>, e01051-24. <a href=\"https://doi.org/10.1128/spectrum.01051-24\">Link</a>"
             },
             {
+                year: "2024",
+                title: "Spectral characteristics of dissolved organic matter in Plateau Lakes: Identifying eutrophication indicators in Southwest China.",
+                citation: "<i>Ecological Informatics</i>, 82, 102703. <a href=\"https://www.sciencedirect.com/science/article/pii/S1574954124002450\">Link</a>"
+            },
+            {
+                year: "2024",
+                title: "Optical characteristics of dissolved organic matter in relation to phytoplankton in Lake Erhai, China.",
+                citation: "<i>Process Safety and Environmental Protection</i>, 186, 166-175. <a href=\"https://www.sciencedirect.com/science/article/abs/pii/S0957582024003604\">Link</a>"
+            },
+            {
                 year: "2021",
                 title: "Cyanobacterial blooms in China: Diversity, distribution, and cyanotoxins.",
                 citation: "<i>Harmful Algae</i>, 109, 102106. <strong>ESI Top 1% Highly Cited Paper</strong>. <a href=\"http://www.sciencedirect.com/science/article/pii/S1568988321001360\">Link</a>"
