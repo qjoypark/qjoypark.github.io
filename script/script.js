@@ -189,6 +189,7 @@ var academicIdentityData = [
     "Reviewer · <i>Global Change Biology</i>",
     "Reviewer · <i>FEMS Microbiology Ecology</i>",
     "Reviewer · <i>ACS ES&amp;T Water</i>",
+    "Reviewer · <i>Archives of Microbiology</i>",
     "Reviewer · <i>Aquatic Ecology</i>",
     "Reviewer · <i>Harmful Algae</i>",
     "Reviewer · <i>Ecological Informatics</i>",
@@ -209,6 +210,8 @@ var conferencesData = [
         description: "The 7th Asian Pacific Phycological Forum (APPF2014), Wuhan, China."
     }
 ];
+
+var postsManifestCache = null;
 
 function toggleMenu() {
     var menu = document.getElementById("menu");
@@ -314,6 +317,256 @@ function renderStudents() {
     });
 }
 
+function fetchPostsManifest() {
+    if (postsManifestCache) {
+        return Promise.resolve(postsManifestCache.slice());
+    }
+
+    return fetch("Blogs/posts.json")
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error("Failed to load posts manifest.");
+            }
+            return response.json();
+        })
+        .then(function(posts) {
+            if (!Array.isArray(posts)) {
+                throw new Error("Invalid posts manifest format.");
+            }
+            postsManifestCache = posts.map(normalizePostEntry);
+            return postsManifestCache.slice();
+        });
+}
+
+function normalizePostEntry(post) {
+    var normalized = Object.assign({}, post);
+    normalized.file = normalized.file || "";
+    normalized.slug = normalized.slug || deriveSlugFromFile(normalized.file);
+
+    if (!normalized.slug) {
+        throw new Error("Each blog post must define a slug or a valid file name.");
+    }
+
+    return normalized;
+}
+
+function deriveSlugFromFile(filePath) {
+    if (!filePath) {
+        return "";
+    }
+
+    var parts = filePath.split("/");
+    var fileName = parts[parts.length - 1] || "";
+    var slug = fileName.replace(/\.(md|markdown)$/i, "");
+    return slug;
+}
+
+function renderBlogList() {
+    var container = document.getElementById("blog-list");
+    if (!container) {
+        return;
+    }
+
+    fetchPostsManifest()
+        .then(function(posts) {
+            if (!posts.length) {
+                container.innerHTML = "<p>No blog posts available yet. Please check back soon.</p>";
+                return;
+            }
+
+            posts.sort(function(a, b) {
+                if (a.date && b.date) {
+                    return new Date(b.date) - new Date(a.date);
+                }
+                if (a.date) {
+                    return -1;
+                }
+                if (b.date) {
+                    return 1;
+                }
+                return 0;
+            });
+
+            container.innerHTML = "";
+            posts.forEach(function(post) {
+                var article = document.createElement("article");
+
+                var heading = document.createElement("h2");
+                var link = document.createElement("a");
+                link.href = "blog-post.html?post=" + encodeURIComponent(post.slug);
+                link.textContent = post.title || post.slug;
+                heading.appendChild(link);
+                article.appendChild(heading);
+
+                if (post.date) {
+                    var dateText = formatDate(post.date);
+                    if (dateText) {
+                        var dateElement = document.createElement("p");
+                        dateElement.className = "blog-date";
+                        dateElement.textContent = dateText;
+                        article.appendChild(dateElement);
+                    }
+                }
+
+                if (post.summary) {
+                    var summary = document.createElement("p");
+                    summary.className = "blog-summary";
+                    summary.textContent = post.summary;
+                    article.appendChild(summary);
+                }
+
+                var readMore = document.createElement("p");
+                var readMoreLink = document.createElement("a");
+                readMoreLink.href = link.href;
+                readMoreLink.textContent = "Read more →";
+                readMore.appendChild(readMoreLink);
+                article.appendChild(readMore);
+
+                container.appendChild(article);
+            });
+        })
+        .catch(function(error) {
+            container.innerHTML = "<p class=\"blog-error\">Unable to load blog posts. " + error.message + "</p>";
+        });
+}
+
+function renderBlogPostDetail() {
+    var article = document.getElementById("blog-article");
+    if (!article) {
+        return;
+    }
+
+    var titleElement = document.getElementById("blog-title");
+    var dateElement = document.getElementById("blog-date");
+    var summaryElement = document.getElementById("blog-summary");
+    var contentElement = document.getElementById("blog-content");
+    var errorElement = document.getElementById("blog-error");
+
+    function showError(message) {
+        if (titleElement) {
+            titleElement.textContent = "Blog post unavailable";
+        }
+        if (dateElement) {
+            dateElement.style.display = "none";
+        }
+        if (summaryElement) {
+            summaryElement.style.display = "none";
+        }
+        if (contentElement) {
+            contentElement.innerHTML = "";
+        }
+        if (errorElement) {
+            errorElement.textContent = message;
+            errorElement.style.display = "block";
+        }
+    }
+
+    var params = new URLSearchParams(window.location.search);
+    var slug = params.get("post");
+
+    if (!slug) {
+        showError("Blog post not specified.");
+        return;
+    }
+
+    fetchPostsManifest()
+        .then(function(posts) {
+            var post = posts.find(function(item) {
+                return item.slug === slug;
+            }) || posts.find(function(item) {
+                return item.slug && item.slug.toLowerCase() === slug.toLowerCase();
+            });
+
+            if (!post) {
+                throw new Error("Blog post not found.");
+            }
+
+            var displayTitle = post.title || "";
+            if (titleElement) {
+                titleElement.textContent = displayTitle || "Untitled Post";
+            }
+
+            if (dateElement) {
+                var formatted = post.date ? formatDate(post.date) : "";
+                dateElement.textContent = formatted;
+                dateElement.style.display = formatted ? "block" : "none";
+            }
+
+            if (summaryElement) {
+                if (post.summary) {
+                    summaryElement.textContent = post.summary;
+                    summaryElement.style.display = "block";
+                } else {
+                    summaryElement.textContent = "";
+                    summaryElement.style.display = "none";
+                }
+            }
+
+            if (displayTitle) {
+                document.title = displayTitle + " · Blog - Da Huo";
+            }
+
+            return loadMarkdownContent(post.file)
+                .then(function(markdown) {
+                    if (!displayTitle) {
+                        var derivedTitle = extractFirstHeading(markdown);
+                        if (derivedTitle && titleElement) {
+                            titleElement.textContent = derivedTitle;
+                            document.title = derivedTitle + " · Blog - Da Huo";
+                            displayTitle = derivedTitle;
+                        } else if (titleElement) {
+                            titleElement.textContent = post.slug;
+                        }
+                    }
+
+                    if (typeof marked === "undefined") {
+                        throw new Error("Markdown renderer not available.");
+                    }
+
+                    if (contentElement) {
+                        contentElement.innerHTML = marked.parse(markdown);
+
+                        if (displayTitle) {
+                            var firstHeading = contentElement.querySelector("h1");
+                            if (firstHeading && firstHeading.textContent.trim() === displayTitle.trim()) {
+                                firstHeading.remove();
+                            }
+                        }
+                    }
+                });
+        })
+        .catch(function(error) {
+            showError(error.message);
+        });
+}
+
+function loadMarkdownContent(filePath) {
+    if (!filePath) {
+        return Promise.reject(new Error("Markdown file path not defined."));
+    }
+
+    return fetch(encodeURI(filePath))
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error("Unable to fetch markdown content.");
+            }
+            return response.text();
+        });
+}
+
+function extractFirstHeading(markdown) {
+    var match = markdown.match(/^#\s+(.+)$/m);
+    return match ? match[1].trim() : null;
+}
+
+function formatDate(dateString) {
+    var parsed = new Date(dateString);
+    if (!isNaN(parsed.getTime())) {
+        return parsed.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+    }
+    return dateString || "";
+}
+
 // 关闭菜单当点击菜单项时并渲染数据
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll(".menu a").forEach(function(item) {
@@ -348,4 +601,6 @@ document.addEventListener("DOMContentLoaded", function() {
     renderAcademicIdentity();
     renderConferences();
     renderStudents();
+    renderBlogList();
+    renderBlogPostDetail();
 });

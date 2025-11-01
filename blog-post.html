@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Blog - Da Huo</title>
+    <title>Blog Post - Da Huo</title>
     <link rel="stylesheet" href="CSS/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <style>
@@ -17,25 +17,21 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        article {
-            margin-bottom: 20px;
+        .blog-meta {
+            margin-bottom: 1.5rem;
         }
 
-        article h2 {
-            color: #2c3e50;
-        }
-
-        article p {
-            margin-bottom: 10px;
+        .blog-meta h1 {
+            margin-bottom: 0.25rem;
         }
 
         .blog-date {
             font-style: italic;
             color: #6b7280;
-            margin-top: -10px;
         }
 
         .blog-summary {
+            margin-top: 0.75rem;
             font-weight: 600;
             color: #374151;
         }
@@ -50,6 +46,11 @@
 
         .blog-error {
             color: #b91c1c;
+        }
+
+        .blog-back {
+            display: inline-block;
+            margin-top: 2rem;
         }
     </style>
 </head>
@@ -77,12 +78,17 @@
             </ul>
         </div>
     </nav>
-    <div class="blog-container" id="blog-container">
-        <section>
-            <h2>Welcome to My Blog</h2>
-            <p>Browse recent articles below; click a title to read the full post.</p>
-            <div id="blog-list" aria-live="polite"></div>
-        </section>
+    <div class="blog-container">
+        <article id="blog-article" aria-live="polite">
+            <div class="blog-meta">
+                <h1 id="blog-title">Loading post…</h1>
+                <p id="blog-date" class="blog-date"></p>
+                <p id="blog-summary" class="blog-summary"></p>
+            </div>
+            <div id="blog-content" class="blog-content"></div>
+            <p id="blog-error" class="blog-error" role="alert" style="display:none;"></p>
+            <a class="blog-back" href="blog.html">← Back to Blog</a>
+        </article>
     </div>
     <footer>
         <p>&copy; 2024 Da Huo. All rights reserved.</p>
