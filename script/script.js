@@ -185,8 +185,10 @@ var studentsData = [
 var academicIdentityData = [
     "Review Editor &amp; Guest Associate Editor · <i>Frontiers in Microbiology</i>",
     "Guest Associate Editor · <i>Microorganisms</i>",
+    "Reviewer · <i>ISME Communications</i>",
     "Reviewer · <i>Global Change Biology</i>",
     "Reviewer · <i>FEMS Microbiology Ecology</i>",
+    "Reviewer · <i>ACS ES&amp;T Water</i>",
     "Reviewer · <i>Aquatic Ecology</i>",
     "Reviewer · <i>Harmful Algae</i>",
     "Reviewer · <i>Ecological Informatics</i>",
