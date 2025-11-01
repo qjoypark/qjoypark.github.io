@@ -157,6 +157,14 @@ var studentsData = [
         page: "students/shengjie-sun.html"
     },
     {
+        name: "Yuying Guan",
+        photo: "students/yuying-guan.jpg",
+        focus: "Lake restoration ecology · Riparian hydrology · DOM optical analytics",
+        summary: "Ph.D. candidate developing hydrological strategies for Chaohu riparian resilience and dissolved organic matter diagnostics in plateau lakes.",
+        currentRole: "Ph.D. Candidate, Nanjing Institute of Geography and Limnology, CAS (2022-present)",
+        page: "students/yuying-guan.html"
+    },
+    {
         name: "Qi Cao",
         photo: "students/Qi-Cao.jpg",
         focus: "Aquatic remote sensing · Cyanobacterial toxins · Molecular diagnostics",
